@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.thi {
+  background-color: red;
+}
+
+// Important! Make sure the target element is really a button!
+button > * {
+  pointer-events: none !important;
+}

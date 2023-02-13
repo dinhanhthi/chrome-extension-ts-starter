@@ -1,0 +1,8 @@
+{
+  "css.validate": false, // used for @tailwindcss
+  "scss.validate": false, // used for @tailwindcss,
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": true,
+  "prettier.semi": false
+}
