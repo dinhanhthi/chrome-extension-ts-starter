@@ -25,6 +25,7 @@ module.exports = {
     'no-unused-vars': 1,
     'prettier/prettier': ['warn', { singleQuote: true, trailingComma: true }],
     quotes: ['warn', 'single'],
-    'spaced-comment': [1, 'always']
+    'spaced-comment': [1, 'always'],
+    'max-len': ['warn', { code: 100 }]
   }
 }

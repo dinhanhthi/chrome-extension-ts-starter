@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-ts-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🚙 A starter for developing a Chrome Extension with TypeScript (only, without React) + Webpack + TailwindCSS + ESLint + Prettier.",
   "scripts": {
     "watch": "webpack --config webpack/webpack.dev.js --watch",
@@ -17,6 +17,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/chrome": "0.0.212",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",

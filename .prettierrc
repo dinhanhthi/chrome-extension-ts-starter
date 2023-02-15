@@ -5,7 +5,7 @@
   "singleQuote": true,
   "tabWidth": 2,
   "bracketSameLine": false,
-  "printWidth": 80,
+  "printWidth": 100,
   "importOrder": [
     "^@core/(.*)$",
     "^@server/(.*)$",
