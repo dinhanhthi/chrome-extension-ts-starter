@@ -1,8 +1,9 @@
+const { merge } = require('webpack-merge')
 const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
-const srcDir = path.join(__dirname, '..', 'src')
+const srcDir = path.join(__dirname, '.', 'src')
 
-module.exports = {
+const commonConfig = {
   entry: {
     popup: path.join(srcDir, 'scripts/popup.ts'),
     options: path.join(srcDir, 'scripts/options.ts'),
@@ -11,7 +12,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, '../dist')
+    path: path.join(__dirname, './dist')
   },
   module: {
     rules: [
@@ -25,8 +26,10 @@ module.exports = {
         use: [
           // Creates `style` nodes from JS strings
           'style-loader',
-          // Translates CSS into CommonJS
+          // Translates CSS into CommonJS (for postcss-loader because it takes css as input)
           'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -36,8 +39,6 @@ module.exports = {
               }
             }
           },
-          // Compiles Sass to CSS
-          'sass-loader'
         ]
       },
       {
@@ -63,4 +64,23 @@ module.exports = {
       options: {}
     })
   ]
+}
+
+const productionConfig = {
+  mode: 'production',
+  devtool: 'source-map',
+}
+
+const developmentConfig = {
+  mode: 'development',
+  devtool: 'inline-source-map'
+}
+
+module.exports = (_env, argv) => {
+  if (argv.mode === 'production') {
+    return merge(commonConfig, productionConfig)
+  }
+  if (argv.mode === 'development') {
+    return merge(commonConfig, developmentConfig)
+  }
 }
