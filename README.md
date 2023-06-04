@@ -2,6 +2,8 @@
 
 A starter for developing a Chrome Extension with __TypeScript (only, without React)__ + Webpack + TailwindCSS + ESLint + Prettier.
 
+If you're looking for a starter **with React supported**, check [this repository](https://github.com/dinhanhthi/react-ts-tailwind-starter).
+
 ## Getting Started
 
 **Requirements**: [node+npm](https://github.com/nvm-sh/nvm), [yarn](https://classic.yarnpkg.com/lang/en/docs/install/).
